@@ -231,7 +231,6 @@ def menu():
         print \033[1;97m╔═══════════════════════════════════════╗
         print \033[1;97m║ \033[1;97mSelamat.Datang.Di.Tools.Kami       ║
         print \033[1;97m╚═══════════════════════════════════════╝"""
-        print logo
 	print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Mini Hack Facebook(\033[1;92mTarget\033[1;97m)"
 	print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m Multi Bruteforce Facebook"
 	print "\033[1;97m║--\033[1;91m> \033[1;92m3.\033[1;97m Super Multi Bruteforce Facebook"
