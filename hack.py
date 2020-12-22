@@ -2560,4 +2560,3 @@ def gaz(toket, enable = True):
 	
 if __name__=='__main__':
         masuk()
-© 2020 GitHub, Inc.
