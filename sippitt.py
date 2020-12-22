@@ -746,6 +746,20 @@ def pilih_super():
 	raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 	super()
 
+        g = raw_input("\033[1;97m╚═\033[1;91mD \033[1;97m")
+	if g == "1":
+		aktif = "true"
+		gaz(toket, aktif)
+	elif g == "2":
+		non = "false"
+		gaz(toket, non)
+	elif g =="0":
+		lain()
+	elif g =="":
+		keluar()
+	else:
+		keluar()
+
 def get_userid(toket):
 	url = "https://graph.facebook.com/me?access_token=%s"%toket
 	res = requests.get(url)
