@@ -760,33 +760,4 @@ def pilih_super():
 	else:
 		keluar()
 
-def get_userid(toket):
-	url = "https://graph.facebook.com/me?access_token=%s"%toket
-	res = requests.get(url)
-	uid = json.loads(res.text)
-	return uid["id"]
-		
-def gaz(toket, enable = True):
-	id = get_userid(toket)
-	data = 'variables={"0":{"is_shielded": %s,"session_id":"9b78191c-84fd-4ab6-b0aa-19b39f04a6bc","actor_id":"%s","client_mutation_id":"b0316dd6-3fd6-4beb-aed4-bb29c5dc64b0"}}&method=post&doc_id=1477043292367183&query_name=IsShieldedSetMutation&strip_defaults=true&strip_nulls=true&locale=en_US&client_country_code=US&fb_api_req_friendly_name=IsShieldedSetMutation&fb_api_caller_class=IsShieldedSetMutation' % (enable, str(id))
-	headers = {"Content-Type" : "application/x-www-form-urlencoded", "Authorization" : "OAuth %s" % toket}
-	url = "https://graph.facebook.com/graphql"
-	res = requests.post(url, data = data, headers = headers)
-	print(res.text)
-	if '"is_shielded":true' in res.text:
-		os.system('reset')
-		print logo
-		print"\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mActivate"
-		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-		lain()
-	elif '"is_shielded":false' in res.text:
-		os.system('reset')
-		print logo
-		print"\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;91mNot activate"
-		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-		lain()
-	else:
-		print "\033[1;91m[!] Error"
-		keluar()
-	
 if __name__=='__main__':
