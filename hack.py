@@ -212,7 +212,7 @@ def menu():
 		print"\033[1;91m[!] No connection"
 		keluar()
 	os.system("reset")
-        print logo = """\33[1;33m .:. "        
+        print logo              .:.      
         print "\33[1;33m      .::::.             
         print "\33[1;33m ..         ..::::::''::         
         print "\33[1;33m  ::::..  .::''''':::    ''.      
