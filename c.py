@@ -235,6 +235,7 @@ def pilih():
 		print "\033[1;91m[!] Wrong input"
 		pilih()
         elif zedd =="1":
+
 ##### MENU HACK #####
 def menu_hack():
 	os.system('reset')
@@ -269,12 +270,14 @@ def hack_pilih():
 		print "\033[1;91m[!] Wrong input"
 		hack_pilih()
         elif hack =="1":
+		mini()
+        elif hack =="2":
 		super()
         elif hack =="0":
 		menu()
 	else:
 		print "\033[1;91m[!] Wrong input"
-		hack_pilih()
+		hack_pilih()								
 
 ##### MINI HF #####
 def mini():
@@ -452,7 +455,6 @@ def mini():
 		print "\033[1;91m[!] Terget not found"
 		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 		menu_hack()
-								
 		
 def super():
 	global toket
