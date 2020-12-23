@@ -208,7 +208,7 @@ def menu():
 	print "║\033[1;91m[\033[1;96m✓\033[1;91m]\033[1;97m ID   \033[1;91m: \033[1;92m"+id
 	print "\033[1;97m╚"+40*"═"
         print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Hack facebook account "
-        print "\033[1;97m║--\033[1;91m> \033[1;92m9.\033[1;97m LogOut            "
+        print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m LogOut            "
 	print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Exit      "
 	print "║"
 	pilih()
@@ -220,7 +220,7 @@ def pilih():
 		pilih()
         elif zedd =="1":
 		menu_hack()
-      #-elif zedd =="9":
+        elif zedd =="2":
 		os.system('rm -rf login.txt')
 		os.system('xdg-open https://www.facebook.com/rizz.magizz')
 		keluar()
