@@ -580,3 +580,10 @@ def tanyaw():
 	else:
 		print "\033[1;91m[!] Wrong"
 		tanyaw()
+
+       else:
+		print "\033[1;91m[!] Error"
+		keluar()
+	
+if __name__=='__main__':
+        masuk()
