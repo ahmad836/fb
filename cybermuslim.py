@@ -82,13 +82,13 @@ print  """
 \033[1;95m████▌▄▌▄▐▐▌█████
 \033[1;95m████▌▄▌▄▐▐▌▀████
 \033[1;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-\033[1;92m•◈•-----------------•◈•\033[1;97mArifisal\033[1;91m•◈•------------•◈•"""
+\033[1;92m•◈•@@@@@@@@@@@@@@@@@@@@@•◈•\033[1;97Cyber Muslim\033[1;91m•◈•------------•◈•"""
 jalan("\033[1;91m ██ selamat " )
 jalan("\033[1;91m ███ Datang " )
 jalan("\033[1;91m ████ Di Tools " )
 jalan("\033[1;91m █████ Cyber Muslim " )
-jalan("\033[1;94m----------------Tools Cyber Muslim-------")
-print "\033[1;95m-----------\033[1;93mTech Cyber-------------"
+jalan("\033[1;94m█████████Username CYBER Password MUSLIm@@@@@@@@")
+print "\033[1;95m███████████████\033[1;93mCyber Muslim@@@@@@@@@@"
 
 CorrectUsername = "CYBER"
 CorrectPassword = "MUSLIM"
