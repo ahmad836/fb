@@ -229,12 +229,6 @@ def pilih():
 	else:
 		print "\033[1;91m[!] Wrong input"
 		pilih()
-def pilih():
-	zedd = raw_input("\033[1;97m╚═\033[1;91m>>> \033[1;97m")
-	if zedd =="":
-		print "\033[1;91m[!] Wrong input"
-		pilih()
-        elif zedd =="1":
 
 ##### MENU HACK #####
 def menu_hack():
