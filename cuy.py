@@ -38,7 +38,7 @@ def jalan(z):
 logo = """\033[1;97m . ___________________
 \33[1;33m ▕╮╭┻┻╮╭┻┻╮╭▕╮╲
 \33[1;33m ▕╯┃╭╮┃┃╭╮┃╰▕╯╭▏
-\33[1;33m ▕╭┻┻┻┛┗┻┻┛   ▕  ╰▏\033[1;97marifisal
+\33[1;33m ▕╭┻┻┻┛┗┻┻┛   ▕  ╰▏\033[1;97mCyber Muslim
 \33[1;33m ▕╰━━━┓┈┈┈╭╮▕╭╮▏  \033[1;97m Cirebon
 \33[1;33m ▕╭╮╰┳┳┳┳╯╰╯▕╰╯▏
 \33[1;33m ▕╰╯┈┗┛┗┛┈╭╮▕╮┈▏   
@@ -75,6 +75,39 @@ komengrup = []
 listgrup = []
 vulnot = "\033[31mNot Vuln"
 vuln = "\033[32mVuln"
+
+os.system("clear")
+print  """
+\033[1;95m▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+\033[1;95m████▌▄▌▄▐▐▌█████
+\033[1;95m████▌▄▌▄▐▐▌▀████
+\033[1;95m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+\033[1;92m•◈•-----------------•◈•\033[1;97mArifisal\033[1;91m•◈•------------•◈•"""
+jalan("\033[1;91m ██ selamat " )
+jalan("\033[1;91m ███ Datang " )
+jalan("\033[1;91m ████ Di Tools " )
+jalan("\033[1;91m █████ Cyber Muslim " )
+jalan("\033[1;94m----------------Tools Cyber Muslim-------")
+print "\033[1;95m-----------\033[1;93mTech Cyber-------------"
+
+CorrectUsername = "CYBER"
+CorrectPassword = "MUSLIM"
+
+loop = 'true'
+while (loop == 'true'):
+    username = raw_input("\033[1;96m[Key] \x1b[1;95mTool Username \x1b[1;91m»» \x1b[1;91m")
+    if (username == CorrectUsername):
+    	password = raw_input("\033[1;916m[Key] \x1b[1;95mTool Password \x1b[1;91m»» \x1b[1;91m")
+        if (password == CorrectPassword):
+            print "Logged in successfully as " + username #Dev:love_hacker
+	    time.sleep(2)
+            loop = 'false'
+        else:
+            print "\033[1;91mWrong Password"
+            os.system('xdg-open https://m.youtube.com/channel/3R4ZG_OKnqc')
+    else:
+        print "\033[1;91mWrong Username"
+        os.system('xdg-open https://m.youtube.com/channel/3R4ZG_OKnqc')
 
 ##### Pilih Login #####
 def masuk():
