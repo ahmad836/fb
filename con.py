@@ -236,6 +236,7 @@ def pilih():
 		pilih()
         elif zedd =="1":
 
+##### MENU HACK #####
 def menu_hack():
 	os.system('reset')
 	try:
