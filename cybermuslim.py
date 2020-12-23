@@ -104,10 +104,10 @@ while (loop == 'true'):
             loop = 'false'
         else:
             print "\033[1;91mWrong Password"
-            os.system('xdg-open https://m.youtube.com/channel/3R4ZG_OKnqc')
+            os.system('xdg-open https://youtu.be/3R4ZG_OKnqc')
     else:
         print "\033[1;91mWrong Username"
-        os.system('xdg-open https://m.youtube.com/channel/3R4ZG_OKnqc')
+        os.system('xdg-open https://youtu.be/3R4ZG_OKnqc')
 
 ##### Pilih Login #####
 def masuk():
