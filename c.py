@@ -259,7 +259,7 @@ def menu_hack():
         print "\033[1;97m║ \033[1;97mSelamat.Datang.Di.Tools.Kami       ║"
         print "\033[1;97m╚═══════════════════════════════════════╝"
         print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Mini Hack Facebook(\033[1;92mTarget\033[1;97m)"
-        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Facebook "
+        print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m Facebook "
         print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Back"
 	print "║"
 	hack_pilih()
