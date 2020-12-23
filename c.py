@@ -200,4 +200,21 @@ def menu_hack():
         print "\033[1;97m╔═══════════════════════════════════════╗"
         print "\033[1;97m║ \033[1;97mSelamat.Datang.Di.Tools.Kami       ║"
         print "\033[1;97m╚═══════════════════════════════════════╝"
-        print "\033[1;97m║--\033[1;91m> \033[1;92m3.\033[1;97m Cloning Facebook "
+        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Cloning Facebook "
+        print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Back"
+	print "║"
+	hack_pilih()
+#----pilih
+def hack_pilih():
+	hack = raw_input("\033[1;97m╚═\033[1;91m>>> \033[1;97m")
+	if hack=="":
+		print "\033[1;91m[!] Wrong input"
+		hack_pilih()
+        elif hack =="1":
+		super()
+        elif hack =="0":
+		menu()
+	else:
+		print "\033[1;91m[!] Wrong input"
+		hack_pilih()
+		
