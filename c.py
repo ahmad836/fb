@@ -449,7 +449,7 @@ def mini():
 																print "\033[1;91m[!] Sorry, failed to open the target password :("
 																print "\033[1;91m[!] try it another way."
 																raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-############### SUPER MBF ################																menu_hack()
+############### SUPER MBF ################											menu_hack()
 def super():
 	global toket
 	os.system('reset')
