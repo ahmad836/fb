@@ -260,7 +260,7 @@ def menu_hack():
         print "\033[1;97m╚═══════════════════════════════════════╝"
         print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Mini Hack Facebook(\033[1;92mTarget\033[1;97m)"
         print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m Multi Bruteforce Facebook" 
-        print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m Facebook "
+        print "\033[1;97m║--\033[1;91m> \033[1;92m2.\033[1;97m Cloning Facebook "
         print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Back"
 	print "║"
 	hack_pilih()
@@ -273,6 +273,9 @@ def hack_pilih():
         elif hack =="1":
 		mini()
         elif hack =="2":
+		crack()
+		hasil()
+        elif hack =="3":
 		super()
         elif hack =="0":
 		menu()
