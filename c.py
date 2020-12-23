@@ -246,8 +246,7 @@ def menu_hack():
 		time.sleep(0.01)
 		login()
 	os.system('reset')
-	print logo
-        print logo           
+	print logo           
         print "\033[1;97m  ╲╲╭━━━━╮"
         print "\033[1;97m  ╭╮┃▆┈┈▆┃╭╮"
         print "\033[1;97m  ┃╰┫▽▽▽┣╯┃"
