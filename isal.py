@@ -571,7 +571,7 @@ def pilih_super():
 	p.map(main, id)
 	print "\033[1;97m----------------\033[1;95mAriefisal\033[1;97m-------------------"
 	print "  \033[1;93m-------Creadit to me [Ariefisal]--------" #Dev:qaiser
-	print '\033[1;94mProcess Has Been Completed Press->Ctrl+Z[<-πNext Type (python2 Rocky.py)↩\033[1;97m....'
+	print '\033[1;94mProcess Has Been Completed Press->Ctrl+Z[<-πNext Type (python2 isal.py)↩\033[1;97m....'
 	print"\033[1;91mTotal OK/\x1b[1;95mCP \033[1;93m: \033[1;91m"+str(len(oks))+"\033[1;93m/\033[1;95m"+str(len(cekpoint))
 	print """
  ╦╦╦╦╦╦▄▀▀▀▀▀▀▄╦╦╦╦╦╦
