@@ -448,14 +448,15 @@ def mini():
 															else:
 																print "\033[1;91m[!] Sorry, failed to open the target password :("
 																print "\033[1;91m[!] try it another way."
-	
+	                                                                                                                        raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+											                                        menu_hack()
      except KeyError:
 		print "\033[1;91m[!] Terget not found"
 		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 		menu_hack()
 			
-															raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-############### SUPER MBF ################											menu_hack()
+															
+############### SUPER MBF ################					
 def super():
 	global toket
 	os.system('reset')
